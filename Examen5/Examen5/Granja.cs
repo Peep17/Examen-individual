@@ -32,31 +32,40 @@ namespace Examen5
     {
         private List<Planta> listaPlantas;
         private List<Animal> listaAnimales;
+        private float precioPorCompra;
 
         public Granja()
         {
             listaPlantas = new List<Planta>();
             listaAnimales = new List<Animal>();
+            precioPorCompra = 10;
+
         }
 
-        public void AgregarPlanta(Planta planta)
+        public void ComprarPlanta(Planta planta)
         {
             listaPlantas.Add(planta);
+            Console.WriteLine($"Has comprado una planta '{planta.nombre}' por ${precioPorCompra}");
+            precioPorCompra += 10; 
         }
 
-        public void AgregarAnimal(Animal animal)
+        public void ComprarAnimal(Animal animal)
         {
             listaAnimales.Add(animal);
+            Console.WriteLine($"Has comprado un animal '{animal.nombre}' por ${precioPorCompra}");
+            precioPorCompra += 10; 
         }
 
-        public List<Planta> ListaPlantas()
+        public List<Planta> ObtenerPlantas()
         {
             return listaPlantas;
         }
 
-        public List<Animal> ListaAnimales()
+        public List<Animal> ObtenerAnimales()
         {
             return listaAnimales;
         }
+
+
     }
 }
